@@ -1,7 +1,7 @@
 ShellCheck plugin for Gedit
 ===========================
 
-This software is a plugin for the text editor [Gedit][1]. It allows to check bash scripts with [ShellCheck][2].
+This software is a plugin for the text editor [Gedit][1]. It allows to check shell scripts using the [ShellCheck][2] linter.
 
 ![Screenshot](https://lzone.de/images/gedit-shellcheck.png)
 
