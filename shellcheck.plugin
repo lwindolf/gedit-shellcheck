@@ -1,0 +1,11 @@
+[Plugin]
+Loader=python3
+Module=shellcheck
+IAge=3
+Name=ShellCheck
+Description=Check your Bash scripts with ShellCheck.
+Icon=emblem-default
+Authors=Lars Windolf <lars.windolf@gmx.de>, Xavier Gendre <gendre.reivax@gmail.com>
+Copyright=Copyright © 2017 Lars Windolf, 2016 Xavier Gendre
+Website=https://github.com/lwindolf/gedit-shellcheck
+Version=0.2.1
