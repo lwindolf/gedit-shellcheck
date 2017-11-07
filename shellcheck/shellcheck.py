@@ -73,7 +73,6 @@ class ShellCheck(object):
                 '-f json',
                 f.name])
             cmd_array = shlex.split(cmd)
-            print(cmd)
 
             try:
                 p = subprocess.Popen(cmd_array, universal_newlines=True, stdout=subprocess.PIPE)
