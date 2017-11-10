@@ -10,7 +10,7 @@ This plugin is derived from the JSHint Gedit plugin by [Xavier Gendre][3]
 Requirements
 ------------
 
-This plugin is for Gedit 3 and is **not compatible with Gedit 2**. It requires ShellCheck being installed. On Debian-based distros install it using
+Requires Gedit 3.14+ and ShellCheck being installed. On Debian-based distros install it using
 
 ```
 apt install shellcheck
