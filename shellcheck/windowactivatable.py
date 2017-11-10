@@ -17,12 +17,10 @@
 
 from gi.repository import GObject, Gedit, Gio, PeasGtk
 
-from .configpanel import ConfigPanel
 from .shellcheck import ShellCheck
 from .outputpanel import OutputPanel
 
-class WindowActivatable(GObject.Object, Gedit.WindowActivatable,
-        PeasGtk.Configurable):
+class WindowActivatable(GObject.Object, Gedit.WindowActivatable):
     __gtype_name__ = "ShellCheckWindowActivatable"
 
     window = GObject.property(type=Gedit.Window)
@@ -46,12 +44,6 @@ class WindowActivatable(GObject.Object, Gedit.WindowActivatable,
                 "ShellCheckOutputPanel", "ShellCheck")
 
         self._shellcheck = ShellCheck()
-
-    def do_create_configure_widget(self):
-        if not self._config_panel:
-            self._config_panel = ConfigPanel()
-
-        return self._config_panel.widget
 
     def do_deactivate(self):
         self._shellcheck = None
