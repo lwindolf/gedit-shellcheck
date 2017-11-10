@@ -19,7 +19,7 @@ apt install shellcheck
 Installation
 ------------
 
-You might want to install the plugin using these steps
+You might want to install the plugin using the [Gedit Plugin Installer](https://github.com/lwindolf/gedit-plugininstaller) or using these manual steps
 
     git clone https://github.com/lwindolf/gedit-shellcheck.git
     mkdir -p ~/.local/share/gedit/plugins/
