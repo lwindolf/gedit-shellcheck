@@ -90,9 +90,13 @@ class OutputPanel(Gtk.ScrolledWindow):
                             item["line"], item["column"], item["code"],
                             urllib.request.unquote(item["message"]))
                     color = "white"
-                    if item["level"] == 'warning':
+                    if item["level"] == 'info':
+                        color = "lightgray"
+                    elif item["level"] == 'style':
+                        color = "lightblue"
+                    elif item["level"] == 'warning':
                         color = "yellow"
-                    if item["level"] == 'error':
+                    elif item["level"] == 'error':
                         color = "red"
                     self._tree_view.get_model().append([
                         item["line"], item["column"],
