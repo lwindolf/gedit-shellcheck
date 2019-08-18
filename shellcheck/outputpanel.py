@@ -73,7 +73,10 @@ class OutputPanel(Gtk.ScrolledWindow):
         except ValueError:
             print("ShellCheck Plugin: error parsing JSON", file=sys.stderr)
 
-        if report:
+        if len(report) == 0:
+            self._tree_view.get_model().append([-1, -1,"All is fine!", "lightgreen"])
+
+        elif report:
             #self._tree_view.get_model().append([-1, -1,
             #    "Options: {}".format(str(report["options"])[1:-1]), "#CCCCCC"])
 
