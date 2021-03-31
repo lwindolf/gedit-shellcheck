@@ -12,12 +12,14 @@ ShellCheck plugin for Gedit
 [![GitHub contributors](https://img.shields.io/github/contributors/lwindolf/gedit-shellcheck.svg)](https://GitHub.com/lwindolf/gedit-shellcheck/graphs/contributors/)
 [![Github All Releases](https://img.shields.io/github/downloads/lwindolf/gedit-shellcheck/total.svg)](https://github.com/lwindolf/gedit-shellcheck)
 
-This software is a plugin for the text editor [Gedit][1]. It allows to check shell scripts using the [ShellCheck][2] linter.
+This software is a plugin for the text editor [Gedit](https://wiki.gnome.org/Apps/Gedit). It allows to check shell scripts using the [ShellCheck](https://www.shellcheck.net/) linter.
+
+
 ![Screenshot](https://lzone.de/images/gedit-shellcheck.png)
 
 ## Contributors
 
-- This plugin is derived from the JSHint Gedit plugin by [Xavier Gendre][3]
+- This plugin is derived from the JSHint Gedit plugin by [Xavier Gendre](https://github.com/Meseira/gedit-jshint)
 - Live checking and matching improvements by [Jürgen Key](https://github.com/elbosso)
 
 ## Requirements
@@ -44,7 +46,3 @@ When a shell source code file is active, you can check it
 - or by selecting menu option `Tools > Check with ShellCheck`
 
 The results are automatically displayed in the bottom panel.
-
-- [1]: https://wiki.gnome.org/Apps/Gedit
-- [2]: https://www.shellcheck.net/
-- [3]: https://github.com/Meseira/gedit-jshint
