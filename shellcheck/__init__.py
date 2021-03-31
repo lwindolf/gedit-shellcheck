@@ -17,3 +17,4 @@
 
 from .appactivatable import AppActivatable
 from .windowactivatable import WindowActivatable
+from .viewactivatable import ExamplePyViewActivatable

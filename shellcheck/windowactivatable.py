@@ -24,6 +24,7 @@ class WindowActivatable(GObject.Object, Gedit.WindowActivatable):
     __gtype_name__ = "ShellCheckWindowActivatable"
 
     window = GObject.property(type=Gedit.Window)
+    map={}
 
     def __init__(self):
         GObject.Object.__init__(self)
@@ -34,6 +35,7 @@ class WindowActivatable(GObject.Object, Gedit.WindowActivatable):
         self._output_panel = None
 
     def do_activate(self):
+        #print('do_activate')
         self._action = Gio.SimpleAction(name="check-with-shellcheck")
         self._action.connect("activate", self._run_shellcheck)
         self.window.add_action(self._action)
@@ -42,10 +44,38 @@ class WindowActivatable(GObject.Object, Gedit.WindowActivatable):
         bottom_panel = self.window.get_bottom_panel()
         bottom_panel.add_titled(self._output_panel,
                 "ShellCheckOutputPanel", "ShellCheck")
+        self.window.connect('tab-added', self.on_window_activetabchanged_event)
+        self.window.connect('tab-removed', self.on_window_tabremoved_event)
+
 
         self._shellcheck = ShellCheck()
 
+    def on_window_activetabchanged_event(self, geditwindow,tab):
+        #print("active tab changed")
+        doc = tab.get_document()
+        if doc not in self.map:
+            handler_id=doc.connect('cursor-moved', self.on_textbuffer_cursormoved_event)
+            self.map[doc] =handler_id
+        pass
+
+    def on_window_tabremoved_event(self, geditwindow,tab):
+        #print("tab removed")
+        doc = tab.get_document()
+        if doc in self.map:
+            doc.disconnect(self.map[doc])
+            self.map.pop(doc)
+        pass
+
+    def on_textbuffer_cursormoved_event(self, document):
+        #print("cursor moved")
+        #print(document.get_language())
+        if(document.get_language() is not None):
+            if(document.get_language().get_name() == 'sh'):
+                self._run_shellcheck(None)
+        pass
+
     def do_deactivate(self):
+        #print('do_deactivate')
         self._shellcheck = None
         self._output_panel = None
 
