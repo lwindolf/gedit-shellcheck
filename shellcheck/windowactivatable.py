@@ -88,7 +88,7 @@ class WindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
         if doc:
             lang = doc.get_language()
-            # Only for JavaScript
+            # Only for Shell
             if lang and lang.get_id() == "sh":
                 state = True
 
