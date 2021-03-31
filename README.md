@@ -40,8 +40,8 @@ Ensure to restart Gedit and activate the plugin in the preferences.
 
 When a shell source code file is active, you can check it
 
-- by selecting menu option `Tools > Check with ShellCheck`
-- or with the accelerator `Ctrl+J`
+- editing and moving the cursor to the next line
+- or by selecting menu option `Tools > Check with ShellCheck`
 
 The results are automatically displayed in the bottom panel.
 
