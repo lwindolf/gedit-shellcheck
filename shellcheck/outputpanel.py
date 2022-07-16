@@ -36,6 +36,7 @@ class OutputPanel(Gtk.ScrolledWindow):
         self._tree_view = Gtk.TreeView(Gtk.ListStore(int, int, str, str))
         self._tree_view.set_headers_visible(False)
         renderer = Gtk.CellRendererText()
+        renderer.props.foreground = "black"
         column = Gtk.TreeViewColumn("Message", renderer, text=2, background=3)
         self._tree_view.append_column(column)
         self._tree_view.connect("row-activated", self.on_row_activated)
